@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000" />
+
+    <link rel="stylesheet" href="/styles/shared.css" />
+    <link rel="stylesheet" href="/styles/404.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Josefin+Sans:200,300"
+    />
+
+    <title>Angelo Gazzola</title>
+  </head>
+  <body>
+    <svg>
+      <defs>
+        <radialGradient id="grad" r="100%">
+          <stop stop-opacity="0.5" stop-color="#ffffff" offset="0" />
+          <stop stop-opacity="0" stop-color="#ffffff" offset="100" />
+        </radialGradient>
+        <mask
+          id="cursorMask"
+          maskUnits="objectBoundingBox"
+          maskContentUtils="objectBoundingBox"
+        >
+          <g>
+            <rect x="0" y="0" width="100" height="100" fill="#000000" />
+            <circle cx="0" cy="0" r="200" fill="url(#grad)" />
+          </g>
+        </mask>
+      </defs>
+      <image xlink:href="/images/open_minded.png"></image>
+    </svg>
+
+    <section id="section1">
+      <div class="title">You got lost.</div>
+      <div class="caption">but you can still <a href="/">go back</a></div>
+    </section>
+
+    <script src="/script.js"></script>
+  </body>
+</html>

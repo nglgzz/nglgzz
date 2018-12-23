@@ -1,0 +1,21 @@
+{
+  "name": "web",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "clean": "if [ -d \"./dist\" ]; then rm -r \"./dist\"; fi",
+    "prepare": "cp -r src dist",
+    "build:css": "postcss dist/styles/*.css --use autoprefixer --replace",
+    "build": "npm run clean && npm run prepare && npm run build:css",
+    "deploy": "npm run build && firebase deploy",
+    "dev": "npm run build && firebase serve"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "autoprefixer": "^9.4.3",
+    "firebase-tools": "^6.2.2",
+    "postcss-cli": "^6.1.0"
+  }
+}

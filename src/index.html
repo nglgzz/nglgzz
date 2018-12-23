@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000" />
+
+    <link rel="stylesheet" href="/styles/shared.css" />
+    <link rel="stylesheet" href="/styles/index.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Josefin+Sans:200,300"
+    />
+
+    <title>Angelo Gazzola</title>
+  </head>
+  <body>
+    <svg>
+      <defs>
+        <radialGradient id="grad" r="100%">
+          <stop stop-opacity="0.5" stop-color="#ffffff" offset="0" />
+          <stop stop-opacity="0" stop-color="#ffffff" offset="100" />
+        </radialGradient>
+        <mask
+          id="cursorMask"
+          maskUnits="objectBoundingBox"
+          maskContentUtils="objectBoundingBox"
+        >
+          <g>
+            <rect x="0" y="0" width="100" height="100" fill="#000000" />
+            <circle cx="0" cy="0" r="200" fill="url(#grad)" />
+          </g>
+        </mask>
+      </defs>
+      <image xlink:href="./images/open_minded.png"></image>
+    </svg>
+
+    <section id="section1">
+      <div class="title">I build things.</div>
+      <div class="caption">it's as simple as that</div>
+    </section>
+
+    <section id="section2">
+      <article>
+        <div class="title">Who is "I"?</div>
+        <div class="description">
+          Someone who loves learning and sharing knowledge.
+        </div>
+      </article>
+
+      <article>
+        <div class="title">What is "build"?</div>
+        <div class="description">
+          Taking some raw materials and creating something with them. Yes, I
+          consider bytes raw materials.
+        </div>
+      </article>
+
+      <article>
+        <div class="title">What is "things"?</div>
+        <div class="description">
+          Anything. At the moment mostly software, food, art and hardware (in no
+          particular order).
+        </div>
+      </article>
+    </section>
+
+    <section id="section3">
+      <article>
+        <div class="title">Where can I find you if ... ?</div>
+        <div class="description">
+          <div class="question">I want to see you working on a project</div>
+          <div class="answer">
+            <a href="https://twitch.tv/nglgzz">Twitch</a>
+          </div>
+
+          <div class="question">I want to see some of your works</div>
+          <div class="answer">
+            <a href="https://github.com/nglgzz">GitHub</a>,
+            <a href="https://reddit.com/user/nglgzz">Reddit</a>
+          </div>
+
+          <div class="question">
+            I want to see what you've been doing at work
+          </div>
+          <div class="answer">
+            <a href="https://linkedin.com/in/nglgzz">LinkedIn</a>
+          </div>
+
+          <div class="question">
+            I want to tell you something I'm excited about
+          </div>
+          <div class="answer">
+            <a href="mailto:angelo@nglgzz.com?subject=">Email</a>
+          </div>
+
+          <div class="question">I want to meet you in person</div>
+          <div class="answer">
+            <a href="https://www.couchsurfing.com/people/angelo-gazzola"
+              >Prague, Czech Republic</a
+            >
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <script src="/script.js"></script>
+  </body>
+</html>

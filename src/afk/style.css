@@ -1,0 +1,54 @@
+body {
+  background: #010101;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: space-evenly;
+  margin: 0;
+  overflow: hidden;
+}
+
+
+.title,
+#timer {
+  color: #c6ff00;
+  font-size: 2.5em;
+  text-align: center;
+}
+
+.title {
+  font-size: 1.5em;
+  color: #555;
+  font-weight: bold;
+}
+
+.input-form {
+  text-align: center;
+}
+
+
+.input-form > form > button,
+#time {
+  font-size: 1em;
+  padding: .9em;
+  margin: .5em;
+  width: 100px;
+  border: 0;
+  color: #c6ff00;
+  background: #111;
+  transition: background .3s;
+}
+
+#time {
+  font-weight: bold;
+}
+
+.input-form > form > button {
+  text-transform: uppercase;
+}
+
+.input-form > form > button:focus,
+#time:focus {
+  outline: none;
+  background: #010101;
+}

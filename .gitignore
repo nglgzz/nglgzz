@@ -1,0 +1,13 @@
+# Logs
+npm-debug.log*
+firebase-debug.log*
+
+# Firebase cache
+.firebase/
+
+# Dependency directories
+node_modules/
+
+# Build directory
+dist
+

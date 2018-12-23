@@ -1,0 +1,14 @@
+section {
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  font-size: var(--size-x-large);
+  font-weight: bold;
+  color: var(--text-color-main);
+}
+
+.caption {
+  font-size: var(--size-medium);
+}
