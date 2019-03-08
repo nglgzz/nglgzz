@@ -1,80 +1,52 @@
-const element = document.querySelector('#timer');
-const colors = ['#c6ff00', 'red', 'white'];
+const timer = document.querySelector('#timer');
+let time = { minutes: 0, seconds: 0 };
+let interval;
 
-function random(start, end, int) {
-  let rand = Math.random() * (end - start) + start;
-
-  if (int) {
-    rand = Math.floor(rand);
-  }
-
-  return rand;
+function parseInput(raw) {
+  return {
+    minutes: Number(raw.slice(0, -2)) || 0,
+    seconds: Number(raw.slice(-2)),
+  };
 }
 
+function formatTime({ minutes, seconds }) {
+  let str = 'in ';
 
-let time = 15;
-
-function writeTime(minutes, seconds) {
-  element.textContent = '';
-  if (minutes !== 0) {
-    element.textContent += minutes + ':';
+  if (minutes) {
+    str += `${minutes} minute${minutes === 1 ? '' : 's'}`;
+  }
+  if (minutes && seconds) {
+    str += ' and';
+  }
+  if (seconds) {
+    str += ` ${seconds} second${seconds === 1 ? '' : 's'}`;
   }
 
-  if (seconds < 10) {
-    element.textContent += '0' + seconds;
-  } else {
-    element.textContent += seconds;
-  }
-
-  console.log(element.textContent, element)
+  return str;
 }
 
-function timeIsUp() {
-  setInterval(() => {
-    element.style.color = colors[random(0, colors.length, true)];
-    element.style.transform = 'rotate(' + random(-3, 3, false) + 'deg)';
-    element.style.fontSize = random(2.5, 5, false) + 'em';
-  }, 50);
-}
+function tick() {
+  const { seconds, minutes } = time;
+  timer.textContent = formatTime(time);
 
-function parseInput(time) {
-  const splitTime = time.split(':');
+  time = {
+    minutes: minutes - !seconds,
+    seconds: seconds ? seconds - 1 : 59,
+  };
 
-  if (splitTime.length === 2) {
-    return (Number(splitTime[0]) * 60) + Number(splitTime[1]);
+  if (!time.minutes && !time.seconds) {
+    clearInterval(interval);
+    timer.textContent = 'any time soon';
   }
-
-  return Number(splitTime[0]) * 60;
 }
 
 function startTimer(event) {
   event.preventDefault();
-  const timeInput = document.querySelector('#time');
 
-  if (!timeInput.value) {
-    time = parseInput('7');
-  } else {
-    time = parseInput(timeInput.value);
-  }
+  const timeInput = document.querySelector('#timeInput');
+  timeInput.style.display = 'none';
+  time = parseInput(timeInput.value || '700');
 
-  const interval = setInterval(() => {
-    const minutes = Math.floor(time / 60);
-    const seconds = time % 60;
-    console.log(minutes, seconds)
-
-    writeTime(minutes, seconds);
-
-    time = time - 1;
-    if (time <=  0) {
-      clearInterval(interval);
-      element.textContent = 'Time\'s up! ☠';
-
-      timeIsUp();
-    }
-  }, 1000);
+  interval = setInterval(tick, 1000);
+  tick();
 }
-
-
-
-
-

@@ -1,0 +1,33 @@
+section {
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  font-size: var(--size-x-large);
+  font-weight: bold;
+  color: var(--text-color-main);
+}
+
+.caption {
+  font-size: var(--size-medium);
+  display: flex;
+}
+
+.caption > *:not(:last-child) {
+  margin-right: 10px;
+}
+
+input {
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid var(--text-color-main);
+  color: var(--text-color-main);
+  font-family: var(--font-family);
+  font-size: var(--size-medium);
+  width: 90px;
+}
+
+input:focus {
+  outline: 0;
+}

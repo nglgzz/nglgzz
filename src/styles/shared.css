@@ -1,14 +1,16 @@
 /* Desktop */
 :root {
+  --font-family: 'Josefin Sans', sans-serif;
+
   --background: #000000;
   --text-color-main: #dddddd;
   --text-color-secondary: #aaaaaa;
   --text-color-highlight: #c9ff01;
 
-  --size-x-large: 5em;
-  --size-large: 3em;
-  --size-medium: 2em;
-  --size-small: 1.5em;
+  --size-x-large: 5rem;
+  --size-large: 3rem;
+  --size-medium: 2rem;
+  --size-small: 1.5rem;
 
   --arrow-margin: 30px;
   --answer-space: 55px;
@@ -17,20 +19,20 @@
 /* Tablet */
 @media screen and (max-width: 685px) {
   :root {
-    --size-x-large: 4em;
-    --size-large: 2em;
-    --size-medium: 1.5em;
-    --size-small: 1.2em;
+    --size-x-large: 4rem;
+    --size-large: 2rem;
+    --size-medium: 1.5rem;
+    --size-small: 1.2rem;
   }
 }
 
 /* Mobile */
 @media screen and (max-width: 685px) {
   :root {
-    --size-x-large: 3em;
-    --size-large: 1.2em;
-    --size-medium: 1.2em;
-    --size-small: 1em;
+    --size-x-large: 3rem;
+    --size-large: 1.2rem;
+    --size-medium: 1.2rem;
+    --size-small: 1rem;
 
     --answer-space: 40px;
   }
@@ -40,7 +42,7 @@
 body {
   background-color: var(--background);
   color: var(--text-color-secondary);
-  font-family: 'Josefin Sans', sans-serif;
+  font-family: var(--font-family);
   margin: 0;
 }
 
