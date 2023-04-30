@@ -15,7 +15,7 @@
   "license": "ISC",
   "dependencies": {
     "autoprefixer": "^10.0.2",
-    "firebase-tools": "^8.16.2",
+    "firebase-tools": "^11.29.1",
     "postcss": "^8.1.10",
     "postcss-cli": "^8.3.0"
   }
